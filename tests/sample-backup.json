@@ -1,0 +1,123 @@
+{
+  "format": "local-db-backup",
+  "version": 1,
+  "app": "tina",
+  "exportedAt": "2026-10-24T10:00:00.000Z",
+  "collections": {
+    "meals": {
+      "m1": {
+        "id": "m1",
+        "name": "Oat porridge",
+        "items": [
+          {
+            "name": "Oats, rolled, dry",
+            "key": "oats_dry",
+            "grams": 60,
+            "per100": {
+              "kcal": 379,
+              "p": 13.2,
+              "c": 67.7,
+              "f": 6.5
+            },
+            "src": "usda"
+          },
+          {
+            "name": "Milk, 2%",
+            "key": "milk_2",
+            "grams": 250,
+            "per100": {
+              "kcal": 50,
+              "p": 3.3,
+              "c": 4.8,
+              "f": 2
+            },
+            "src": "usda"
+          }
+        ],
+        "createdAt": "2026-10-01T08:00:00Z"
+      },
+      "m2": {
+        "id": "m2",
+        "name": "Tofu rice bowl",
+        "items": [
+          {
+            "name": "Tofu, firm",
+            "key": "tofu_firm",
+            "grams": 150,
+            "per100": {
+              "kcal": 144,
+              "p": 17.3,
+              "c": 2.8,
+              "f": 8.7
+            },
+            "src": "usda"
+          },
+          {
+            "name": "White rice, cooked",
+            "key": "rice_white_cooked",
+            "grams": 200,
+            "per100": {
+              "kcal": 130,
+              "p": 2.7,
+              "c": 28,
+              "f": 0.3
+            },
+            "src": "usda"
+          }
+        ],
+        "createdAt": "2026-10-01T08:00:00Z"
+      }
+    },
+    "settings": {
+      "targets": {
+        "kcal": 2000,
+        "p": 120,
+        "c": 230,
+        "f": 60,
+        "isSet": true,
+        "method": "custom",
+        "diet": "vegetarian"
+      }
+    },
+    "days": {
+      "2026-10-20": {
+        "date": "2026-10-20",
+        "entries": [
+          {
+            "id": "e1",
+            "t": "2026-10-20T08:00:00Z",
+            "meal": "breakfast",
+            "title": "Oat porridge",
+            "source": "meal",
+            "items": [
+              {
+                "name": "Oats, rolled, dry",
+                "key": "oats_dry",
+                "grams": 60,
+                "per100": {
+                  "kcal": 379,
+                  "p": 13.2,
+                  "c": 67.7,
+                  "f": 6.5
+                },
+                "src": "usda"
+              },
+              {
+                "name": "Milk, 2%",
+                "key": "milk_2",
+                "grams": 250,
+                "per100": {
+                  "kcal": 50,
+                  "p": 3.3,
+                  "c": 4.8,
+                  "f": 2
+                },
+                "src": "usda"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
