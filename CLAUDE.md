@@ -99,7 +99,7 @@ old name's key, `macro-lens.db.v1`, is copied to it on first start
 ## Project notes
 
 - Target is an Android phone: an installable PWA, later Firebase Hosting.
-  Firebase is deliberately not implemented yet — only a stub.
+  Google sign-in works; syncing data through Firebase is not built yet.
 
 
 
@@ -115,9 +115,18 @@ npm run build      dist/ — the finished PWA
 npm run icons      PNG icons from public/icon.svg
 ```
 
-## Google backend: Firebase (planned, not started)
+## Google backend: Firebase (sign-in done, sync next)
 
-Not to be implemented until asked. `src/lib/db/firebase.ts` is
+Google sign-in works: `src/lib/db/auth.ts` (shared with the sibling apps;
+loads Firebase lazily; pop-up, falling back to a redirect) and the "Your
+data" card. The project settings are in `src/lib/firebase-config.ts`;
+`authDomain` is the app's own `.web.app` address in production (its
+`/__/auth/handler` must be an authorized redirect URI of the project's
+Google OAuth client), the project's firebaseapp.com address elsewhere. The
+service worker leaves `/__/` paths to the server. Firebase is pinned to
+12.x, the last line that supports Node 22.
+
+Syncing the data is not built yet: `src/lib/db/firebase.ts` is still
 the stub. The design: one Firebase project shared with the sibling apps; one
 Hosting site per app; optional Google sign-in; data in Firestore under
 `users/{uid}/apps/tina/…` with the same documents as today; offline

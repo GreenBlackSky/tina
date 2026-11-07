@@ -6,6 +6,7 @@
 <script lang="ts">
   import Eye from '../components/Eye.svelte';
   import MacroLine from '../components/MacroLine.svelte';
+  import { account, initial, signIn } from '../lib/account.svelte';
   import { MEAL_NAME, mealByHour, niceDate, parseDate, today } from '../lib/dates';
   import { eyeState } from '../lib/eye';
   import { fmt, itemValues, mealsThatFit, r0, sumItems } from '../lib/nutrition';
@@ -66,7 +67,22 @@
   }
 </script>
 
-<div class="wordmark" aria-hidden="true">TINA</div>
+<div class="trow">
+  <div class="wordmark" aria-hidden="true">TINA</div>
+  {#if account.now.status === 'signed-in'}
+    <button
+      type="button"
+      class="avatar"
+      data-act="account"
+      aria-label="Account: {account.now.email}"
+      onclick={() => go('settings')}>{initial(account.now)}</button
+    >
+  {:else if account.now.status === 'signed-out'}
+    <button type="button" class="acct" data-act="account" disabled={account.busy} onclick={signIn}
+      >Sign in</button
+    >
+  {/if}
+</div>
 <div class="thead">
   <div>
     <div class="tsub">

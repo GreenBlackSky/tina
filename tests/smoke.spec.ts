@@ -191,3 +191,14 @@ test('a backup saves and restores', async ({ page }) => {
   await expect(page.locator('.meal')).toHaveCount(2);
   await expectNoErrors(errors);
 });
+
+/* Signing in itself needs a real Google account, so it is tried by hand;
+   this checks that Firebase loads and the app sees "signed out". */
+test('Google sign-in is offered, signed out', async ({ page }) => {
+  const errors = await openFresh(page);
+  await expect(page.locator('[data-act="account"]')).toHaveText('Sign in');
+  await tap(page, '[data-tab="settings"]');
+  await expect(page.locator('[data-account]')).toHaveAttribute('data-account', 'signed-out');
+  await expect(page.locator('[data-act="signin"]')).toBeEnabled();
+  await expectNoErrors(errors);
+});
