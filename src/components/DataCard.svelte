@@ -1,5 +1,5 @@
 <!--
-  "Your data": the log is saved in this browser only (until Firebase is set
+  "Your data": the log is saved in this browser only (until syncing is set
   up), so this is where a backup file is saved and restored. The backup
   exported from the original claude.ai app restores here too.
 -->

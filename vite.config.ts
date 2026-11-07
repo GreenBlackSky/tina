@@ -12,6 +12,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg'],
+      /* Firebase Hosting's own pages (/__/auth/… for Google sign-in) must
+         come from the server, not from the offline copy of the app. */
+      workbox: { navigateFallbackDenylist: [/^\/__\//] },
       manifest: {
         name: 'Tina',
         short_name: 'Tina',

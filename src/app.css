@@ -91,6 +91,34 @@ header.top {
   letter-spacing: 0.42em;
   margin-bottom: 10px;
 }
+/* Today's top row: the wordmark, and the account in the corner */
+.trow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 32px;
+  margin-bottom: 10px;
+}
+.trow .wordmark {
+  margin-bottom: 0;
+}
+.acct {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 13px;
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--surface);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0;
+}
 .iconbtn {
   border: 1px solid var(--line);
   background: var(--surface);

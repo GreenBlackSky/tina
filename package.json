@@ -16,6 +16,9 @@
     "lint:fix": "eslint --fix .",
     "icons": "node scripts/icons.mjs"
   },
+  "dependencies": {
+    "firebase": "12.19.0"
+  },
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@playwright/test": "1.56.1",

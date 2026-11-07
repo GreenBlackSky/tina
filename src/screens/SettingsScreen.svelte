@@ -1,9 +1,10 @@
 <!--
-  Targets: the calculator (about you → calories and macros, every step
+  Targets: Google sign-in, the calculator (about you → calories and macros, every step
   explained), setting targets by hand, your own foods, the Claude key for
   photo and text estimates, and backups.
 -->
 <script lang="ts">
+  import AccountCard from '../components/AccountCard.svelte';
   import ClaudeCard from '../components/ClaudeCard.svelte';
   import DataCard from '../components/DataCard.svelte';
   import { BASE_FOODS, clampNumber, fmt, r0, r1 } from '../lib/nutrition';
@@ -143,6 +144,7 @@
     >Your targets</b
   ><span style="width:40px"></span>
 </div>
+<AccountCard />
 {#if goals.isSet}
   <div class="banner num">
     Current: <b>{fmt(goals.kcal)} kcal</b> · P {r0(goals.p)} g · C {r0(goals.c)} g · F {r0(goals.f)}
